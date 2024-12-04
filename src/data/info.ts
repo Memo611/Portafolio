@@ -12,38 +12,36 @@ export const info = {
     description: `Soy un desarrollador en formación con una pasión por aprender y experimentar en el desarrollo móvil y web. Tengo experiencia trabajando con React Native, Kotlin y herramientas como RazorLight, enfocándome en aplicaciones educativas y soluciones backend innovadoras. Siempre estoy buscando maneras de mejorar mis habilidades y resolver problemas de forma creativa. ¿Tienes un desafío? Estoy listo para enfrentarlo y seguir creciendo.`,
     education: [
       {
-        title: "Self-Taught Developer Extraordinaire",
-        date: "2000 - Present",
-        location: "Springfield Elementary School of Hard Knocks",
-        gpa: "4.0 (A+ in Pranks)",
-        thesis: "The Art of Subverting Expectations: A Practical Guide",
+        title: "Ingenieria en Informatica",
+        date: "2021 - Present",
+        location: "Hermosillo, Sonora. Mexico",
       },
     ],
     experience: [
       {
         title: "Frontend Developer",
         date: "2023 - Present",
-        location: "Krusty Burger Web Dev",
+        location: "Hermosillo, Sonora. Mexico",
         description:
           "Crafted interactive web experiences using React and Redux. Often multitasked between coding and avoiding Principal Skinner.",
       },
       {
         title: "Backend Developer",
         date: "2023 - Present",
-        location: "Comic Book Guy's Software Emporium",
+        location: "Hermosillo, Sonora. Mexico",
         description:
           "Masterminded backend solutions using Node.js and MongoDB. Surprisingly good at debugging, considering my history of causing bugs.",
       },
       {
         title: "App Developer",
         date: "2024 - Present",
-        location: "Springfield Elementary Cyber Club",
+        location: "Hermosillo, Sonora. Mexico",
         description:
           "Pioneered early web exploits, leading the club in daring coding escapades. Was disciplined for hacking the school's grading system.",
       },
     ],
 
-    skills: ["JavaScript", "React", "Node.js", "MongoDB", "Prank Mastery"], // not used yet
+    skills: ["JavaScript","TypeScript", "React-Native","React", "Node.js","MySQL", "MongoDB"], // not used yet
   },
 
   projects: [
