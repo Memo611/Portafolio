@@ -1,0 +1,29 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Post from "../components/post_section/Post.astro";
+
+const allPosts = await Astro.glob("../pages/posts/*.md");
+
+// Reorder allPosts by date
+allPosts.sort((a, b) => {
+  const dateA = new Date(a.frontmatter.date);
+  const dateB = new Date(b.frontmatter.date);
+  return dateB.getTime() - dateA.getTime();
+});
+
+const title = "Posts";
+---
+
+<BaseLayout title={title}>
+  <div
+    class="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 p-4 md:p-2 xl:p-5 mt-24"
+  >
+    {
+      allPosts.map((post) => (
+        <div class="mb-4">
+          <Post post={post} />
+        </div>
+      ))
+    }
+  </div>
+</BaseLayout>

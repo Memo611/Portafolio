@@ -1,0 +1,54 @@
+---
+import { Image } from "astro:assets";
+
+const { post } = Astro.props;
+
+const { url } = post;
+const { title, description, img_path, img_alt, date } = post.frontmatter;
+---
+
+<div
+  class="relative bg-primary rounded-lg shadow-sm dark:shadow-dk-secondary dark:bg-dk-primary transform transition duration-500 hover:scale-105"
+>
+  <div class="p-2 flex justify-center">
+    {
+      img_path && (
+        <a href={url}>
+          <Image
+            class="rounded-md w-full md:h-56 h-28 object-cover"
+            src={img_path}
+            alt={img_alt || title}
+            width={300}
+            height={200}
+          />
+        </a>
+      )
+    }
+  </div>
+
+  <div class="px-4 pb-3 md:h-40 h-36">
+    <div>
+      <a href={url}>
+        <h5
+          class="text-xl font-semibold tracking-tight hover:text-secondary dark:hover:text-dk-secondary text-text dark:text-dk-text"
+        >
+          {title}
+        </h5>
+      </a>
+
+      <p class="antialiased text-text dark:text-dk-text text-sm break-keep">
+        {description}
+      </p>
+      <div class="flex items-center justify-between mt-4">
+        <div class="flex items-center flex-row justify-between w-full">
+          <a
+            href={url}
+            class="text-sm font-semibold text-text dark:text-dk-text hover:underline"
+            >Read more</a
+          >
+          <p class="text-sm text-gray-600 dark:text-gray-400">{date}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

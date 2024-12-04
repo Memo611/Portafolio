@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  scrollbar-color: theme(colors.secondary) theme(colors.primary);
+  scrollbar-width: thin;
+}
+
+html.dark {
+  scrollbar-color: theme(colors.dk-secondary) theme(colors.dk-primary);
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  font-weight: bold;
+  color: theme(colors.secondary);
+}
+
+h2 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+  color: theme(colors.secondary);
+}
+
+h3 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 500;
+  color: theme(colors.secondary);
+}
+
+h4 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+  color: theme(colors.secondary);
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+}
+
+h2,
+p {
+  color: theme(colors.text);
+}
+html.dark h1 {
+  color: theme(colors.dk-secondary);
+}
+
+html.dark h2,
+html.dark h3,
+html.dark h4 {
+  color: theme(colors.dk-secondary);
+}
+
+html.dark p {
+  color: theme(colors.dk-text);
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+* {
+  overflow-wrap: break-word !important;
+  word-wrap: break-word !important;
+  transition: color 0.25s linear;
+  -webkit-transition: color 0.25s linear;
+  -moz-transition: color 0.25s linear;
+  -ms-transition: color 0.25s linear;
+  -o-transition: color 0.25s linear;
+}
+
+*::selection {
+  background-color: theme(colors.text) !important;
+  color: theme(colors.primary) !important;
+}
+
+html.dark *::selection {
+  background-color: theme(colors.dk-text) !important;
+  color: theme(colors.dk-primary) !important;
+}
