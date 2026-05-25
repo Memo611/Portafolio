@@ -33,9 +33,9 @@ document.addEventListener('DOMContentLoaded', function () {
         style.textContent = `
             @keyframes particleFloat {
                 0%, 100% { transform: translate(0px, 0px) scale(1); opacity: 0.3; }
-                25% { transform: translate(${Math.random()*30-15}px, ${Math.random()*30-15}px) scale(1.2); opacity: 0.6; }
-                50% { transform: translate(${Math.random()*30-15}px, ${Math.random()*30-15}px) scale(0.8); opacity: 0.2; }
-                75% { transform: translate(${Math.random()*30-15}px, ${Math.random()*30-15}px) scale(1.1); opacity: 0.5; }
+                25% { transform: translate(${Math.random() * 30 - 15}px, ${Math.random() * 30 - 15}px) scale(1.2); opacity: 0.6; }
+                50% { transform: translate(${Math.random() * 30 - 15}px, ${Math.random() * 30 - 15}px) scale(0.8); opacity: 0.2; }
+                75% { transform: translate(${Math.random() * 30 - 15}px, ${Math.random() * 30 - 15}px) scale(1.1); opacity: 0.5; }
             }
         `;
         document.head.appendChild(style);
@@ -147,12 +147,12 @@ document.addEventListener('DOMContentLoaded', function () {
     // 3. Crea un template con variables: {{name}}, {{email}}, {{subject}}, {{message}}
     // 4. Reemplaza los valores de abajo con tus IDs reales
 
-    const EMAILJS_PUBLIC_KEY  = 'Iuvntv7xb3n5D8qqQ';   // Settings > API Keys
-    const EMAILJS_SERVICE_ID  = 'service_zsembqj';   // Email Services
-    const EMAILJS_TEMPLATE_ID = 'template_60695t5';  // Email Templates
+    const EMAILJS_PUBLIC_KEY = 'hTO247X_TlSIzbjlv';   // Settings > API Keys
+    const EMAILJS_SERVICE_ID = 'service_zsembqj';   // Email Services
+    const EMAILJS_TEMPLATE_ID = 'template_yt5h9sl';  // Email Templates
 
     if (typeof emailjs !== 'undefined') {
-        emailjs.init(EMAILJS_PUBLIC_KEY);
+        emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
     }
 
     const contactForm = document.getElementById('contactForm');
@@ -162,20 +162,20 @@ document.addEventListener('DOMContentLoaded', function () {
         contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
 
-            const btnText    = contactForm.querySelector('.btn-text');
+            const btnText = contactForm.querySelector('.btn-text');
             const btnLoading = contactForm.querySelector('.btn-loading');
-            const submitBtn  = contactForm.querySelector('.submit-btn');
+            const submitBtn = contactForm.querySelector('.submit-btn');
 
             // Show loading
-            btnText.style.display    = 'none';
+            btnText.style.display = 'none';
             btnLoading.style.display = 'inline-flex';
             submitBtn.disabled = true;
             formStatus.textContent = '';
             formStatus.className = 'form-status';
 
             const templateParams = {
-                name:    contactForm.name.value,
-                email:   contactForm.email.value,
+                name: contactForm.name.value,
+                email: contactForm.email.value,
                 subject: contactForm.subject.value,
                 message: contactForm.message.value,
             };
@@ -185,7 +185,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     throw new Error('EmailJS not loaded. Please configure your API keys.');
                 }
 
-                await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
+                await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams, {
+                    publicKey: EMAILJS_PUBLIC_KEY
+                });
 
                 formStatus.textContent = '✅ Message sent! I\'ll get back to you soon.';
                 formStatus.classList.add('success');
@@ -196,7 +198,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 formStatus.textContent = '❌ Something went wrong. Please try again or email me directly.';
                 formStatus.classList.add('error');
             } finally {
-                btnText.style.display    = 'inline-flex';
+                btnText.style.display = 'inline-flex';
                 btnLoading.style.display = 'none';
                 submitBtn.disabled = false;
             }
