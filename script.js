@@ -147,9 +147,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // 3. Crea un template con variables: {{name}}, {{email}}, {{subject}}, {{message}}
     // 4. Reemplaza los valores de abajo con tus IDs reales
 
-    const EMAILJS_PUBLIC_KEY  = 'TU_PUBLIC_KEY';   // Settings > API Keys
-    const EMAILJS_SERVICE_ID  = 'TU_SERVICE_ID';   // Email Services
-    const EMAILJS_TEMPLATE_ID = 'TU_TEMPLATE_ID';  // Email Templates
+    const EMAILJS_PUBLIC_KEY  = 'Iuvntv7xb3n5D8qqQ';   // Settings > API Keys
+    const EMAILJS_SERVICE_ID  = 'service_zsembqj';   // Email Services
+    const EMAILJS_TEMPLATE_ID = 'template_60695t5';  // Email Templates
 
     if (typeof emailjs !== 'undefined') {
         emailjs.init(EMAILJS_PUBLIC_KEY);
